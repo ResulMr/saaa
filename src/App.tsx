@@ -7,6 +7,7 @@ interface User {
   name: string;
   phone: string;
   email: string;
+  image:string
 }
 
 const App: React.FC = () => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         name: `${userInfo.name.first} ${userInfo.name.last}`,
         phone: userInfo.phone,
         email: userInfo.email,
+        image: userInfo.picture.large
       };
       setUser(newUser);
     } catch (error) {
@@ -45,7 +47,7 @@ const App: React.FC = () => {
       <div className="flex justify-center mb-4">
         <img
           id="user-image"
-          src="https://via.placeholder.com/150"
+          src={user.image}
           alt="İstifadəçi Şəkli"
           className="w-32 h-32 rounded-full object-cover"
           />
